@@ -1,0 +1,18 @@
+name: Checkout Python
+
+on: [push]
+
+jobs:
+  python-checkout-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Python Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: goncaloramos/python-test-script
+      - name: Python Run
+        run: |
+          pwd
+          ls -a
+          python test.py
